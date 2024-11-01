@@ -7,7 +7,7 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
-    targetPort: 5678
+    targetPort: 8080
   selector:
     app: hello-arc
 ---
@@ -28,11 +28,9 @@ spec:
     spec:
       containers:
       - name: hello-arc
-        image: hashicorp/http-echo:latest
-        args:
-          - "-text=$(CUSTOM_MESSAGE)"
-        env:
-        - name: CUSTOM_MESSAGE
-          value: "Hello from Azure Arc Kubernetes!"
+        image: liorkamrat/hello-arc:latest
         ports:
-        - containerPort: 5678
+        - containerPort: 8080
+        env:
+        - name: MESSAGE
+          value: Welcome to Azure Arc GitOps Demo!
