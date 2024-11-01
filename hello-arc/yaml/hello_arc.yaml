@@ -7,7 +7,7 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 5678
   selector:
     app: hello-arc
 ---
@@ -35,4 +35,4 @@ spec:
         - name: CUSTOM_MESSAGE
           value: "Hello from Kubernetes!"
         ports:
-        - containerPort: 8080
+        - containerPort: 5678
