@@ -33,6 +33,6 @@ spec:
           - "-text=$(CUSTOM_MESSAGE)"
         env:
         - name: CUSTOM_MESSAGE
-          value: "Hello from Kubernetes!"
+          value: "Hello from Azure Arc Kubernetes!"
         ports:
         - containerPort: 5678
