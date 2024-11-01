@@ -28,9 +28,11 @@ spec:
     spec:
       containers:
       - name: hello-arc
-        image: jumpstartprod.azurecr.io/hello-arc:latest
+        image: hashicorp/http-echo:latest
+        args:
+          - "-text=$(CUSTOM_MESSAGE)"
+        env:
+        - name: CUSTOM_MESSAGE
+          value: "Hello from Kubernetes!"
         ports:
         - containerPort: 8080
-        env:
-        - name: MESSAGE
-          value: Welcome to Azure Arc GitOps Demo!
