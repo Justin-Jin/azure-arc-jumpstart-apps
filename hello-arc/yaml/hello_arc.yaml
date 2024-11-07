@@ -28,9 +28,9 @@ spec:
     spec:
       containers:
       - name: hello-arc
-        image: liorkamrat/hello-arc:latest
+        image: jusjinmsft/hello-arc:latest
         ports:
         - containerPort: 8080
         env:
         - name: MESSAGE
-          value: Welcome to Azure Arc Edge Studio Demo!
+          value: Welcome to Azure Arc Hello-Arc Demo!
